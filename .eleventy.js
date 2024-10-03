@@ -57,8 +57,8 @@ module.exports = function (eleventyConfig) {
 
       let collection = images.map(i => {
         return {
-          path: i.replace('./img/', '/img/'),
-          thumbpath: i.replace('./img/', '/img/thumb-')
+          path: i.replace('./img/', './img/'),
+          thumbpath: i.replace('./img/', './img/thumb-')
         }
       });
 
