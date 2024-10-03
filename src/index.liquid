@@ -1,0 +1,28 @@
+---
+layout: base
+permalink: /
+title: 'Banna Bikes'
+---
+
+
+{%- for img in collections.images -%}
+
+{% assign next_i = forloop.index | plus: 1 %}
+{% assign prev_i = forloop.index | minus: 1 %}
+
+<div class="cssbox">
+    <a id="image{{forloop.index}}" href="#image{{forloop.index}}"><img class="cssbox_thumb" src="{{img.thumbpath}}" />
+        <span class="cssbox_full"><img src="{{img.path}}" /></span>
+    </a>
+    <a class="cssbox_close" href="#void"></a>
+    {% unless forloop.first  == true  %}
+    <a class="cssbox_prev" href="#image{{prev_i}}">&lt;</a>
+    {% endunless %}
+    {% unless forloop.last == true %}
+    <a class="cssbox_next" href="#image{{next_i}}">&gt;</a>
+    {% endunless %}
+</div>
+
+
+
+{%- endfor -%}
